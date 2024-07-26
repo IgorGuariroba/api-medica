@@ -1,0 +1,30 @@
+### GET Buscar por especialistas disponiveis
+GET {{base_url}}/api/specialists
+###
+
+### GET Ver a pontuação do especialista
+GET {{base_url}}/api/specialists/9c9e0c87-73eb-4a99-874e-3ae2b70e44da/reviews
+###
+
+
+
+### POST
+POST {{base_url}}/api/login
+Content-Type: application/json
+
+{
+    "email": "email@example.com",
+    "password": "12345678"
+}
+###
+
+
+### POST Atribuir pontuação ao especialista
+POST {{base_url}}/api/specialists/9c9e0c87-73eb-4a99-874e-3ae2b70e44da/reviews
+Content-Type: application/json
+
+{
+    "rating": 8,
+    "comment": "Maravilhoso esse medico, adorei"
+}
+###

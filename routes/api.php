@@ -30,11 +30,11 @@ Route::post('/login', function (Request $request) {
     return response('Ok');
 });
 
-Route::middleware('auth')->group(function () {
+//Route::middleware('auth')->group(function () {
     Route::get('/specialists/highest_rated/{limit?}', [SpecialistController::class, 'highestRated']);
     Route::apiResource('/specialists', SpecialistController::class);
     Route::apiResource('specialists.reviews', ReviewController::class);
-});
+//});
 
 Route::get('/test', fn () => 'Ok')
     ->withoutMiddleware(ThrottleRequests::class . ':api');
