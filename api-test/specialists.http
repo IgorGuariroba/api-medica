@@ -55,7 +55,7 @@ Content-Type: application/json
 ### GET Buscar por especialistas disponiveis de notas altas
 GET {{base_url}}/api/specialists/highest_rated
 Authorization: Bearer {{token}}
-Content-Type: application/json
+#Content-Type: application/json
 
 > {%
     client.test("Status code is 200", function () {
