@@ -2,6 +2,13 @@
 GET {{base_url}}/api/specialists
 Authorization: Bearer {{token}}
 Content-Type: application/json
+
+> {%
+    client.test("Status code is 200", function () {
+        client.assert(response.status === 201, "Esperamos o status code 200 para essa rota: " + response.status);
+    });
+%}
+
 ###
 
 ### POST Login and Save Token
@@ -13,7 +20,9 @@ Content-Type: application/json
     "password": "12345678"
 }
 
-> {% client.global.set("token", response.body.token) %}
+> {%
+    client.global.set("token", response.body.token)
+%}
 
 
 
@@ -39,4 +48,5 @@ Content-Type: application/json
     "rating": 8,
     "comment": "Maravilhoso esse medico, adorei"
 }
+
 ###
